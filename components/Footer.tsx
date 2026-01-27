@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
-            <Link to="/" className="text-3xl font-bold text-green-500">GreenGrowth</Link>
+            <Link to="/" className="text-3xl font-bold text-green-500">Green Soul IT</Link>
             <p className="text-gray-400 leading-relaxed">
               We are a results-driven digital marketing agency helping brands grow and scale using data and creativity.
             </p>
