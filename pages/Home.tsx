@@ -5,6 +5,11 @@ import { ArrowRight, Star, Quote } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
 import { fetchServices, fetchCaseStudies, fetchTestimonials } from '../services/api';
 import { Service, CaseStudy, Testimonial } from '../types';
+import Invoice from './Invoice';
+
+
+
+
 
 const Home: React.FC = () => {
   const [services, setServices] = useState<Service[]>([]);
@@ -60,6 +65,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+     <Invoice></Invoice>
 
       {/* Case Studies */}
       <section className="py-24 bg-gray-50">

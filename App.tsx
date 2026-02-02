@@ -12,6 +12,7 @@ import BlogPage from './pages/Blog';
 import Contact from './pages/Contact';
 import Auth from './pages/Auth';
 import { User } from './types';
+import ServicesPage from './pages/ServicesPage';
 
 // ScrollToTop component to reset scroll position on route change
 const ScrollToTop = () => {
@@ -53,6 +54,8 @@ const App: React.FC = () => {
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/:slug" element={<Services />} />
+            <Route path="/services" element={<ServicesPage />} />
+
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/contact" element={<Contact />} />
