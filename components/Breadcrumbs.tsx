@@ -16,7 +16,7 @@ const Breadcrumbs: React.FC = () => {
       {/* Blurred background image */}
       <div 
         className="absolute inset-0 bg-cover bg-center transition-all duration-700 transform hover:scale-105"
-        style={{ backgroundImage: 'url(https://picsum.photos/id/160/1200/400)' }}
+        style={{ backgroundImage: 'url(https://static.vecteezy.com/system/resources/thumbnails/072/497/787/small/a-single-white-daisy-with-a-yellow-center-stands-illuminated-against-a-dark-blue-and-green-ethereal-background-photo.jpg)' }}
       >
         <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
       </div>

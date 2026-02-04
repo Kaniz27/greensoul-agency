@@ -19,7 +19,7 @@ const Invoice: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center py-16 justify-center p-4">
       <div className="max-w-7xl w-full bg-white rounded-xl shadow-xl overflow-hidden">
 
         {/* Header */}
@@ -118,11 +118,7 @@ const Invoice: React.FC = () => {
           </div>
         </div>
 
-        {/* Footer */}
-        <div className="bg-gray-100 text-center text-sm text-gray-600 p-4">
-          Thank you for choosing{" "}
-          <span className="font-semibold">Green Soul IT</span>
-        </div>
+        
       </div>
     </div>
   );

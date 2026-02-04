@@ -89,7 +89,7 @@ const Navbar: React.FC<NavbarProps> = ({ user, onLogout }) => {
             </div>
 
             <Link to="/case-studies" className="nav-link">Case Studies</Link>
-            <Link to="/invoice" className="nav-link">Invoice</Link>
+            <Link to="/invoice" className="nav-link">Funnel Invoice </Link>
             <Link to="/contact" className="nav-link">Contact</Link>
 
             {/* Auth */}

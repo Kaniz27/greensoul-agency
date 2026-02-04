@@ -30,49 +30,113 @@ export const fetchHeroSlider = async () => {
 export const fetchServices = async (): Promise<Service[]> => {
   await delay(500);
   return [
-    {
-      id: '1',
-      title: 'SEO',
-      slug: 'seo',
-      description: 'Optimizing website to rank higher in search engines using cutting-edge data analysis.',
-      image: 'https://picsum.photos/seed/seo/600/400',
-    },
-    {
-      id: '2',
-      title: 'Social Media Marketing',
-      slug: 'social-media',
-      description: 'Increase engagement & brand visibility across all major social platforms.',
-      image: 'https://picsum.photos/seed/smm/600/400',
-    },
-    {
-      id: '3',
-      title: 'PPC',
-      slug: 'ppc',
-      description: 'Paid ads management & ROI optimization for maximum conversion rates.',
-      image: 'https://picsum.photos/seed/ppc/600/400',
-    },
-    {
-      id: '4',
-      title: 'Content Marketing',
-      slug: 'content',
-      description: 'Blog, videos, and content strategy designed for organic growth and authority.',
-      image: 'https://picsum.photos/seed/content/600/400',
-    },
-    {
-      id: '5',
-      title: 'Web Development',
-      slug: 'web-dev',
-      description: 'Building responsive, modern websites that convert visitors into customers.',
-      image: 'https://picsum.photos/seed/web/600/400',
-    },
-    {
-      id: '6',
-      title: 'Poster / Graphic Design',
-      slug: 'design',
-      description: 'Creative designs for online & offline campaigns that capture attention.',
-      image: 'https://picsum.photos/seed/design/600/400',
-    },
-  ];
+  {
+    id: '1',
+    title: 'Facebook Marketing',
+    slug: 'facebook-marketing',
+    description: 'Strategic Facebook marketing to grow brand awareness, reach, and sales.',
+    image: 'https://picsum.photos/seed/facebook1/600/400',
+  },
+  {
+    id: '2',
+    title: 'Facebook Marketing Setup & Boosting',
+    slug: 'facebook-setup-boosting',
+    description: 'Complete Facebook ads setup and boosting with proper targeting and budget control.',
+    image: 'https://picsum.photos/seed/facebook2/600/400',
+  },
+  {
+    id: '3',
+    title: 'Facebook Business Page Setup',
+    slug: 'facebook-page-setup',
+    description: 'Professional Facebook business page setup maintaining country standard.',
+    image: 'https://picsum.photos/seed/facebook3/600/400',
+  },
+  {
+    id: '4',
+    title: 'Logo Design',
+    slug: 'logo-design',
+    description: 'Unique and professional logo design to represent your brand identity.',
+    image: 'https://picsum.photos/seed/logo/600/400',
+  },
+  {
+    id: '5',
+    title: 'Regular Post Boost',
+    slug: 'regular-post-boost',
+    description: 'Regular Facebook post boosting to increase reach and engagement.',
+    image: 'https://picsum.photos/seed/postboost/600/400',
+  },
+  {
+    id: '6',
+    title: 'FB Group Share',
+    slug: 'fb-group-share',
+    description: 'Targeted Facebook group sharing for product and service promotion.',
+    image: 'https://picsum.photos/seed/group/600/400',
+  },
+  {
+    id: '7',
+    title: 'Customer Funnel Setup',
+    slug: 'customer-funnel-setup',
+    description: 'Customer funnel setup from awareness to conversion and retargeting.',
+    image: 'https://picsum.photos/seed/funnel/600/400',
+  },
+  {
+    id: '8',
+    title: 'Data Layer Setup',
+    slug: 'data-layer-setup',
+    description: 'Advanced data layer setup for accurate tracking and analytics.',
+    image: 'https://picsum.photos/seed/datalayer/600/400',
+  },
+  {
+    id: '9',
+    title: 'Google Tag Manager Integration',
+    slug: 'gtm-integration',
+    description: 'Google Tag Manager integration for analytics, pixels, and events.',
+    image: 'https://picsum.photos/seed/gtm/600/400',
+  },
+  {
+    id: '10',
+    title: 'Design & Creative',
+    slug: 'design-creative',
+    description: 'Creative design solutions for ads, branding, and marketing campaigns.',
+    image: 'https://picsum.photos/seed/creative/600/400',
+  },
+  {
+    id: '11',
+    title: 'Product Banner Design',
+    slug: 'product-banner-design',
+    description: 'High-quality product banner design for ads and promotions (per design).',
+    image: 'https://picsum.photos/seed/productbanner/600/400',
+  },
+  {
+    id: '12',
+    title: 'Service Banner Design',
+    slug: 'service-banner-design',
+    description: 'Attractive service banner design to promote services (per design).',
+    image: 'https://picsum.photos/seed/servicebanner/600/400',
+  },
+  {
+    id: '13',
+    title: 'Graphics Design',
+    slug: 'graphics-design',
+    description: 'Graphics design for ads, posts, and creatives (per design).',
+    image: 'https://picsum.photos/seed/graphics/600/400',
+  },
+  {
+    id: '14',
+    title: 'Content Creation',
+    slug: 'content-creation',
+    description: 'Monthly product and marketing content creation for business growth.',
+    image: 'https://picsum.photos/seed/content/600/400',
+  },
+  {
+    id: '15',
+    title: 'Facebook Ads Management',
+    slug: 'facebook-ads-management',
+    description: 'Professional Facebook ads management focused on leads and sales.',
+    image: 'https://picsum.photos/seed/facebookads/600/400',
+  },
+]
+
 };
 
 export const fetchCaseStudies = async (): Promise<CaseStudy[]> => {
@@ -135,16 +199,23 @@ export const fetchTestimonials = async (): Promise<Testimonial[]> => {
     {
       id: '1',
       name: 'John Doe',
-      company: 'ABC Corp',
+      company: 'Brain Station',
       feedback: 'They transformed our online presence and our sales skyrocketed within months.',
-      photo: 'https://picsum.photos/seed/user1/200/200',
+      photo: 'https://www.shutterstock.com/image-photo/young-indian-latin-happy-smiling-260nw-2007080246.jpg',
     },
     {
       id: '2',
       name: 'Sarah Smith',
       company: 'TechFlow',
       feedback: 'The best agency we have worked with. Their data-driven approach actually works.',
-      photo: 'https://picsum.photos/seed/user2/200/200',
+      photo: 'https://static.vecteezy.com/system/resources/thumbnails/024/770/154/small/businessman-working-at-office-using-laptop-photo.jpg',
+    },
+    {
+      id: '3',
+      name: 'Dybala Smith',
+      company: 'TechFlow',
+      feedback: 'The best agency we have worked with. Their data-driven approach actually works.',
+      photo: 'https://img.freepik.com/free-photo/busy-young-attractive-smiling-man-sitting-co-working-open-office-holding-laptop_285396-1768.jpg?semt=ais_hybrid&w=740&q=80',
     },
   ];
 };

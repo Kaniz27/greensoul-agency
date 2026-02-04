@@ -5,7 +5,7 @@ import { ArrowRight, Star, Quote } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
 import { fetchServices, fetchCaseStudies, fetchTestimonials } from '../services/api';
 import { Service, CaseStudy, Testimonial } from '../types';
-import Invoice from './Invoice';
+
 
 
 
@@ -65,39 +65,91 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-     <Invoice></Invoice>
+    
 
       {/* Case Studies */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
-            <div>
-              <h2 className="text-green-500 font-bold tracking-widest uppercase text-sm mb-3">Our Work</h2>
-              <h3 className="text-4xl font-bold text-gray-900">Recent Case Studies</h3>
-            </div>
-            <Link to="/case-studies" className="mt-4 md:mt-0 text-green-500 font-bold hover:underline flex items-center">
-              See more projects <ArrowRight className="ml-1 w-4 h-4" />
-            </Link>
-          </div>
-          <div className="space-y-12">
-            {caseStudies.map((study, idx) => (
-              <div key={study.id} className={`flex flex-col ${idx % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} bg-white rounded-3xl overflow-hidden shadow-md group animate-in slide-in-from-bottom-12 duration-700`} style={{ animationDelay: `${idx * 200}ms` }}>
-                <div className="md:w-1/2 overflow-hidden">
-                  <img src={study.image} alt={study.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                </div>
-                <div className="md:w-1/2 p-12 flex flex-col justify-center">
-                  <span className="text-green-500 font-bold text-sm mb-4">{study.category}</span>
-                  <h4 className="text-3xl font-bold mb-6">{study.title}</h4>
-                  <p className="text-gray-600 text-lg mb-8">{study.description}</p>
-                  <button className="self-start bg-gray-900 text-white px-8 py-3 rounded-full font-bold hover:bg-green-500 transition-colors">
-                    Read Case Study
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
+<section className="py-24 bg-green-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Header */}
+    <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
+      <div>
+        <h2 className="text-green-500 font-bold tracking-widest uppercase text-sm mb-3">Our Work</h2>
+        <h3 className="text-4xl font-bold text-gray-900">Recent Case Studies</h3>
+      </div>
+      <Link to="/case-studies" className="mt-4 md:mt-0 text-green-500 font-bold hover:underline flex items-center">
+        See more projects <ArrowRight className="ml-1 w-4 h-4" />
+      </Link>
+    </div>
+
+    {/* Grid for Case Studies */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* Case Study 1 */}
+      <div className="bg-white rounded-3xl overflow-hidden  duration-300">
+        <div className="w-full h-64 overflow-hidden">
+          <img
+            src="https://www.suryainformatics.com/wp-content/uploads/2023/12/wp3950068.jpg"
+            alt="Digital Marketing Strategy"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
         </div>
-      </section>
+        <div className="p-8 flex flex-col justify-center">
+          <span className="text-green-500 font-bold text-sm mb-2">Digital Strategy</span>
+          <h4 className="text-2xl font-bold mb-4">Social Media Campaign </h4>
+          <p className="text-gray-600 text-base mb-6">
+            Boosted engagement and lead generation by 70% using data-driven social media strategies across Instagram and LinkedIn.
+          </p>
+          <button className="self-start bg-green-600 text-white px-6 py-2 rounded-full font-bold hover:bg-green-500 transition-colors">
+            Read Case Study
+          </button>
+        </div>
+      </div>
+
+      {/* Case Study 2 */}
+      <div className="bg-white rounded-3xl overflow-hidden  duration-300">
+        <div className="w-full h-64 overflow-hidden">
+          <img
+            src="https://virtuonai.com/assets/images/seo.webp"
+            alt="SEO Optimization"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+        </div>
+        <div className="p-8 flex flex-col justify-center">
+          <span className="text-green-500 font-bold text-sm mb-2">SEO & Analytics</span>
+          <h4 className="text-2xl font-bold mb-4">Organic Traffic Growth</h4>
+          <p className="text-gray-600 text-base mb-6">
+            Increased website visits by 200% in 6 months through advanced SEO optimization, content marketing.
+          </p>
+          <button className="self-start bg-green-500 text-white px-6 py-2 rounded-full font-bold hover:bg-green-500 transition-colors">
+            Read Case Study
+          </button>
+        </div>
+      </div>
+
+      {/* Case Study 3 */}
+      <div className="bg-white rounded-3xl overflow-hidden  duration-300">
+        <div className="w-full h-64 overflow-hidden">
+          <img
+            src="https://timesinternet.in/blog/wp-content/uploads/2023/12/Shutterstock_1814591309.jpg"
+            alt="Email & Content Marketing"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+        </div>
+        <div className="p-8 flex flex-col justify-center">
+          <span className="text-green-500 font-bold text-sm mb-2">Email Marketing</span>
+          <h4 className="text-2xl font-bold mb-4">Lead Conversion Funnel</h4>
+          <p className="text-gray-600 text-base mb-6">
+            Implemented automated email campaigns and content funnels, increasing lead conversions by 45% within 3 months.
+          </p>
+          <button className="self-start bg-green-500 text-white px-6 py-2 rounded-full font-bold hover:bg-green-500 transition-colors">
+            Read Case Study
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
       {/* Testimonials */}
       <section className="py-24 bg-white overflow-hidden">
