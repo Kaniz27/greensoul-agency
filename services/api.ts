@@ -225,9 +225,9 @@ export const fetchTeam = async (): Promise<TeamMember[]> => {
   return [
     {
       id: '1',
-      name: 'Tanvir Ahmed',
+      name: 'Tareque Mahmud',
       role: 'CEO & Founder',
-      photo: 'https://picsum.photos/seed/ceo/400/400',
+      photo: 'https://simple-portfolio-seven-delta.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Funnamed.3c1127a3.jpg&w=1080&q=75',
     },
     {
       id: '2',
