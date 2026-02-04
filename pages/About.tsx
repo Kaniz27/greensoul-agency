@@ -19,7 +19,7 @@ const About: React.FC = () => {
               <h2 className="text-3xl sm:text-5xl font-bold mb-8 text-gray-900">Our Story & <span className="text-green-500">Vision</span></h2>
               <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                 <p>
-                  Founded in 2020, GreenGrowth started with a simple mission: to help businesses navigate the complex digital landscape with transparency and results-driven strategies.
+                  Founded in 2020, <span className='text-green-600 font-bold'> Green Soul It</span> started with a simple mission: to help businesses navigate the complex digital landscape with transparency and results-driven strategies.
                 </p>
                 <p>
                   Today, we are a team of passionate digital experts, designers, and developers dedicated to scaling brands globally. We believe that every business has a unique story, and our job is to tell it to the right audience using the most advanced digital tools.

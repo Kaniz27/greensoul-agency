@@ -194,12 +194,12 @@ const Home: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-green-500 relative overflow-hidden">
+      <section className="py-20 bg-green-200 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-green-400/20 rounded-full blur-3xl -mr-32 -mt-32"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-green-400/10 rounded-full blur-3xl -ml-48 -mb-48"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h3 className="text-3xl md:text-5xl font-bold text-white mb-8">Ready to Scale Your Business?</h3>
-          <p className="text-white/80 text-xl mb-10 max-w-2xl mx-auto">Join hundreds of successful companies growing with our data-driven strategies.</p>
+          <h3 className="text-3xl md:text-5xl font-bold text-black mb-8">Ready to Scale Your Business?</h3>
+          <p className="text-black/80 text-xl mb-10 max-w-2xl mx-auto">Join hundreds of successful companies growing with our data-driven strategies.</p>
           <Link to="/contact" className="bg-white text-green-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 shadow-xl transition-all inline-block">
             Start Your Free Consultation
           </Link>
