@@ -5,9 +5,12 @@ import { ArrowRight, Star, Quote } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
 import { fetchServices, fetchCaseStudies, fetchTestimonials } from '../services/api';
 import { Service, CaseStudy, Testimonial } from '../types';
+<<<<<<< HEAD
 import ImageCollection from './ImageCollection';
 
 
+=======
+>>>>>>> 8b4f516cf95176cc56d7c2f21e0317ede4f12ef1
 
 
 
@@ -68,7 +71,11 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+<<<<<<< HEAD
     <ImageCollection></ImageCollection>
+=======
+    
+>>>>>>> 8b4f516cf95176cc56d7c2f21e0317ede4f12ef1
 
       {/* Case Studies */}
 <section className="py-24 bg-green-50">
