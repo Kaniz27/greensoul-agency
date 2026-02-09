@@ -5,12 +5,15 @@ import { ArrowRight, Star, Quote } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
 import { fetchServices, fetchCaseStudies, fetchTestimonials } from '../services/api';
 import { Service, CaseStudy, Testimonial } from '../types';
-<<<<<<< HEAD
-=======
+
 import ImageCollection from './ImageCollection';
 
 
->>>>>>> 98aab88 (update project)
+
+
+
+
+
 
 
 
@@ -71,11 +74,13 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-<<<<<<< HEAD
+
     
-=======
+
     <ImageCollection></ImageCollection>
->>>>>>> 98aab88 (update project)
+
+
+
 
       {/* Case Studies */}
 <section className="py-24 bg-green-50">

@@ -1,5 +1,43 @@
 // Invoice.tsx
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import React, { useState } from "react";
+
+interface Service {
+  title: string;
+  description: string;
+  icon: string; // You can use emoji or image URL
+}
+
+const services: Service[] = [
+  { title: "Website Development", description: "eCommerce website development", icon: "💻" },
+  { title: "Landing Page Design", description: "High converting landing pages", icon: "🖌️" },
+  { title: "Product Research", description: "Find profitable products", icon: "🔍" },
+  { title: "Tracking & Integration", description: "Setup analytics & tracking", icon: "📊" },
+  { title: "Google Pixel Setup", description: "Track visitor behavior", icon: "🎯" },
+  { title: "Conversion API Setup", description: "Integrate server-side tracking", icon: "⚡" },
+  { title: "Google Tag Manager Setup", description: "Easily manage tags", icon: "🗂️" },
+  { title: "Social Platform Integration", description: "Connect social accounts", icon: "🔗" },
+  { title: "Social Media Services", description: "Content & strategy", icon: "📱" },
+  { title: "Social Media Setup & Management", description: "Monthly management", icon: "🛠️" },
+  { title: "Instagram Business Account Setup", description: "Professional Instagram setup", icon: "📸" },
+  { title: "Facebook Unlimited Boosting", description: "Service charge – Monthly", icon: "💰" },
+  { title: "Ad Budget", description: "Client provides separately", icon: "💵" },
+];
+
+const Invoice: React.FC = () => {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+  const toggleExpand = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
+  return (
+    <div className="min-h-screen flex flex-col items-center py-16 px-4 bg-gray-50">
+      <div className="max-w-7xl w-full ">
+=======
+>>>>>>> 6a683d28e013787be0a444e9e56cdbae98481290
 import React from "react";
 
 const Invoice: React.FC = () => {
@@ -22,6 +60,7 @@ const Invoice: React.FC = () => {
   return (
     <div className="min-h-screen flex items-center py-16 justify-center p-4">
       <div className="max-w-7xl w-full bg-white rounded-xl shadow-xl overflow-hidden">
+<<<<<<< HEAD
 =======
 import React, { useState } from "react";
 
@@ -58,6 +97,9 @@ const Invoice: React.FC = () => {
     <div className="min-h-screen flex flex-col items-center py-16 px-4 bg-gray-50">
       <div className="max-w-7xl w-full ">
 >>>>>>> 98aab88 (update project)
+=======
+>>>>>>> 8b4f516cf95176cc56d7c2f21e0317ede4f12ef1
+>>>>>>> 6a683d28e013787be0a444e9e56cdbae98481290
 
         {/* Header */}
         <div className="bg-green-600 text-white p-6 text-center">
@@ -66,6 +108,38 @@ const Invoice: React.FC = () => {
         </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        {/* Services */}
+        <div className="p-6 space-y-6">
+          <h2 className="text-xl font-semibold text-green-700 mb-3 border-b pb-2">
+            Services Included
+          </h2>
+
+          <div className="grid md:grid-cols-3 gap-4">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="bg-green-50 rounded-lg p-4 cursor-pointer hover:shadow-lg transition"
+                onClick={() => toggleExpand(index)}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="text-3xl">{service.icon}</div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-green-700">{service.title}</h3>
+                    {expandedIndex === index && (
+                      <p className="text-gray-700 mt-1">{service.description}</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Total */}
+          <div className="bg-green-100 border border-green-300 rounded-lg p-4 flex justify-between items-center mt-6">
+=======
+>>>>>>> 6a683d28e013787be0a444e9e56cdbae98481290
         {/* Body */}
         <div className="p-6 space-y-6">
 
@@ -92,6 +166,7 @@ const Invoice: React.FC = () => {
 
           {/* Total */}
           <div className="bg-green-100 border border-green-300 rounded-lg p-4 flex justify-between items-center">
+<<<<<<< HEAD
 =======
         {/* Services */}
         <div className="p-6 space-y-6">
@@ -122,6 +197,9 @@ const Invoice: React.FC = () => {
           {/* Total */}
           <div className="bg-green-100 border border-green-300 rounded-lg p-4 flex justify-between items-center mt-6">
 >>>>>>> 98aab88 (update project)
+=======
+>>>>>>> 8b4f516cf95176cc56d7c2f21e0317ede4f12ef1
+>>>>>>> 6a683d28e013787be0a444e9e56cdbae98481290
             <span className="text-lg font-semibold text-gray-800">
               TOTAL PAYABLE BILL
             </span>
@@ -151,12 +229,21 @@ const Invoice: React.FC = () => {
                 <h3 className="font-bold text-pink-600 text-lg">bKash</h3>
                 <p className="text-gray-700 mt-1">01607183592</p>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <p className="text-xs text-gray-500 mt-1">
                   Tap to Pay
                 </p>
 =======
                 <p className="text-xs text-gray-500 mt-1">Tap to Pay</p>
 >>>>>>> 98aab88 (update project)
+=======
+                <p className="text-xs text-gray-500 mt-1">Tap to Pay</p>
+=======
+                <p className="text-xs text-gray-500 mt-1">
+                  Tap to Pay
+                </p>
+>>>>>>> 8b4f516cf95176cc56d7c2f21e0317ede4f12ef1
+>>>>>>> 6a683d28e013787be0a444e9e56cdbae98481290
               </a>
 
               {/* Nagad */}
@@ -168,18 +255,34 @@ const Invoice: React.FC = () => {
                 <h3 className="font-bold text-orange-600 text-lg">Nagad</h3>
                 <p className="text-gray-700 mt-1">01607183592</p>
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <p className="text-xs text-gray-500 mt-1">
                   Personal
                 </p>
 =======
                 <p className="text-xs text-gray-500 mt-1">Personal</p>
 >>>>>>> 98aab88 (update project)
+=======
+                <p className="text-xs text-gray-500 mt-1">Personal</p>
+=======
+                <p className="text-xs text-gray-500 mt-1">
+                  Personal
+                </p>
+>>>>>>> 8b4f516cf95176cc56d7c2f21e0317ede4f12ef1
+>>>>>>> 6a683d28e013787be0a444e9e56cdbae98481290
               </a>
 
               {/* Bank */}
               <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 text-center hover:shadow-lg transition">
                 <div className="text-4xl mb-2">🏦</div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                <h3 className="font-bold text-blue-600 text-lg">Bank Transfer</h3>
+                <p className="text-sm text-gray-700 mt-1">Dutch Bangla Bank Ltd</p>
+                <p className="text-xs text-gray-600 mt-1">A/C: 3031100347730</p>
+=======
+>>>>>>> 6a683d28e013787be0a444e9e56cdbae98481290
                 <h3 className="font-bold text-blue-600 text-lg">
                   Bank Transfer
                 </h3>
@@ -189,15 +292,20 @@ const Invoice: React.FC = () => {
                 <p className="text-xs text-gray-600 mt-1">
                   A/C: 3031100347730
                 </p>
+<<<<<<< HEAD
 =======
                 <h3 className="font-bold text-blue-600 text-lg">Bank Transfer</h3>
                 <p className="text-sm text-gray-700 mt-1">Dutch Bangla Bank Ltd</p>
                 <p className="text-xs text-gray-600 mt-1">A/C: 3031100347730</p>
 >>>>>>> 98aab88 (update project)
+=======
+>>>>>>> 8b4f516cf95176cc56d7c2f21e0317ede4f12ef1
+>>>>>>> 6a683d28e013787be0a444e9e56cdbae98481290
               </div>
 
             </div>
           </div>
+<<<<<<< HEAD
 <<<<<<< HEAD
         </div>
 
@@ -206,6 +314,15 @@ const Invoice: React.FC = () => {
 
         </div>
 >>>>>>> 98aab88 (update project)
+=======
+
+        </div>
+=======
+        </div>
+
+        
+>>>>>>> 8b4f516cf95176cc56d7c2f21e0317ede4f12ef1
+>>>>>>> 6a683d28e013787be0a444e9e56cdbae98481290
       </div>
     </div>
   );
