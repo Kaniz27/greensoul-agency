@@ -85,11 +85,46 @@ export const fetchTestimonials = async (): Promise<Testimonial[]> => {
 export const fetchTeam = async (): Promise<TeamMember[]> => {
   await delay(500);
   return [
-    { id: '1', name: 'Tareque Mahmud', role: 'CEO & Founder', photo: 'https://simple-portfolio-seven-delta.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Funnamed.3c1127a3.jpg&w=1080&q=75', details: 'MBA in Business Administration from Dhaka University. 10+ years experience leading tech startups and digital ventures.' },
-    { id: '2', name: 'Aminul Islam Shuvo', role: ' Marketing Head', photo: 'https://picsum.photos/seed/seo-head/400/400', details: 'Gont.Tolaram Collage. Expert digital marketing strategies.' },
-    { id: '3', name: 'Abid Rahman', role: 'Digital Marketer', photo: 'https://picsum.photos/seed/cd/400/400', details: 'Southeast University. 1+ years experience in creative direction marketing.' },
-    { id: '4', name: 'Kaniz Fatema', role: 'Lead Developer', photo: 'https://picsum.photos/seed/dev1/400/400', details: 'BSc in Computer Science from DIU. Specializes in frontend & backend development, React, Node.js.' },
-     { id: '4', name: 'MD Al Shahrier Akon', role: 'Graphics Desigener', photo: 'https://picsum.photos/seed/dev1/400/400', details: 'BSc in Computer Science from Southeast University. Specializes in frontend & backend development, React, Node.js.' },
+    {
+    id: '1',
+    name: 'Tareque Mahmud',
+    role: 'CEO & Founder',
+    company: 'Green Soul IT',
+    photo: 'https://simple-portfolio-seven-delta.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Funnamed.3c1127a3.jpg&w=1080&q=75',
+    details: 'MBA in Business Administration from Dhaka University. 10+ years experience leading tech startups and digital ventures.'
+  },
+  {
+    id: '2',
+    name: 'Aminul Islam Shuvo',
+    role: 'Marketing Head',
+    company: 'Green Soul IT',
+    photo: 'https://picsum.photos/seed/seo-head/400/400',
+    details: 'Gont. Tolaram College. Expert in digital marketing strategies.'
+  },
+  {
+    id: '3',
+    name: 'Abid Rahman',
+    role: 'Digital Marketer',
+    company: 'Green Soul IT',
+    photo: 'https://picsum.photos/seed/cd/400/400',
+    details: 'Southeast University. 1+ years experience in creative direction marketing.'
+  },
+  {
+    id: '4',
+    name: 'Kaniz Fatema',
+    role: 'Web Developer',
+    company: 'Green Soul IT',
+    photo: 'https://picsum.photos/seed/dev1/400/400',
+    details: 'BSc in Computer Science from DIU. Specializes in frontend & backend development, React, Node.js.'
+  },
+  {
+    id: '5',
+    name: 'MD Al Shahrier Akon',
+    role: 'Graphics Designer',
+    company: 'Green Soul IT',
+    photo: 'https://picsum.photos/seed/dev2/400/400',
+    details: 'BSc in Computer Science from Southeast University. Specializes in frontend & backend development, React, Node.js.'
+  }
   ];
 };
 
