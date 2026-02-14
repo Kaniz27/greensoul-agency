@@ -37,14 +37,14 @@ const Services: React.FC = () => {
               />
               <div className="grid grid-cols-2 gap-4 mt-8">
                 <img
-                  src="https://picsum.photos/seed/dash1/400/300"
-                  alt="Dashboard"
-                  className="rounded-2xl shadow-sm"
+                  src={activeService.image}
+                  alt={`${activeService.title} 1`}
+                  className="rounded-2xl shadow-sm object-cover w-full h-48"
                 />
                 <img
-                  src="https://picsum.photos/seed/dash2/400/300"
-                  alt="Metrics"
-                  className="rounded-2xl shadow-sm"
+                  src={activeService.image}
+                  alt={`${activeService.title} 2`}
+                  className="rounded-2xl shadow-sm object-cover w-full h-48"
                 />
               </div>
             </div>
@@ -120,19 +120,17 @@ const Services: React.FC = () => {
             <Link
               key={service.id}
               to={`/services/${service.slug}`}
-              className="group bg-gray-50 p-8 rounded-3xl border border-transparent hover:border-green-100 hover:bg-white hover:shadow-2xl transition-all duration-300 animate-in fade-in slide-in-from-bottom-8 duration-700"
-              style={{ animationDelay: `${idx * 100}ms` }}
+              className="group bg-white p-6 rounded-3xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 flex flex-col"
             >
-              <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 mb-8 group-hover:bg-green-500 group-hover:text-white transition-colors duration-300">
-                <span className="text-2xl font-bold">0{idx + 1}</span>
-              </div>
-              <h4 className="text-2xl font-bold mb-4">{service.title}</h4>
-              <p className="text-gray-600 mb-8 leading-relaxed line-clamp-3">
-                {service.description}
-              </p>
-              <span className="inline-flex items-center text-green-500 font-bold">
-                Learn Details{" "}
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-2 transition-transform" />
+              <img
+                src={service.image}
+                alt={service.title}
+                className="w-full h-56 object-cover rounded-2xl mb-6"
+              />
+              <h4 className="text-2xl font-bold mb-4 text-gray-900">{service.title}</h4>
+              <p className="text-gray-600 mb-6 line-clamp-3">{service.description}</p>
+              <span className="inline-flex items-center text-green-500 font-bold mt-auto">
+                Learn Details <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-2 transition-transform" />
               </span>
             </Link>
           ))}
