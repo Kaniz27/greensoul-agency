@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, MessageCircle, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageCircle, CheckCircle } from 'lucide-react';
 import { contactSubmit } from '../services/api';
 
 const Contact: React.FC = () => {
@@ -9,9 +9,19 @@ const Contact: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
-    await contactSubmit(formData);
-    setStatus('success');
-    setFormData({ name: '', email: '', message: '' });
+    try {
+      await contactSubmit(formData);
+      setStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (err) {
+      console.error(err);
+      setStatus('idle');
+      alert('Something went wrong! Please try again.');
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const openWhatsApp = () => {
@@ -23,7 +33,7 @@ const Contact: React.FC = () => {
       <div className="py-16 sm:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-            
+
             {/* Left Section */}
             <div>
               <h2 className="text-green-500 font-bold tracking-widest uppercase text-lg sm:text-xl mb-2 sm:mb-3">
@@ -86,13 +96,11 @@ const Contact: React.FC = () => {
             </div>
 
             {/* Right Section */}
-            <div className="bg-gray-50 p-6 sm:p-10 rounded-3xl shadow-sm border border-gray-100 relative overflow-hidden">
-              {/* Your form code unchanged */}
-              {/* (shortened here for clarity, keep yours same) */}
+            <div className="bg-green-50 p-6 sm:p-10 rounded-3xl shadow-sm border border-gray-100 relative overflow-hidden">
               {status === 'success' ? (
                 <div className="text-center py-16">
                   <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                  <h4 className="text-xl font-bold mb-2">Message Sent!</h4>
+                  <h4 className="text-xl text-black font-bold mb-2">Message Sent!</h4>
                   <p className="text-gray-600 mb-6">
                     Thanks for reaching out. We'll get back to you within 24 hours.
                   </p>
@@ -104,8 +112,41 @@ const Contact: React.FC = () => {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit}>
-                  {/* keep your full form code here */}
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400"
+                  />
+                  <textarea
+                    name="message"
+                    placeholder="Your Message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={5}
+                    className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400"
+                  />
+                  <button
+                    type="submit"
+                    disabled={status === 'loading'}
+                    className="w-full bg-green-500 text-white py-3 rounded-full font-bold hover:bg-green-600 transition disabled:opacity-50"
+                  >
+                    {status === 'loading' ? 'Sending...' : 'Send Message'}
+                  </button>
                 </form>
               )}
             </div>
