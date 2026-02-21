@@ -33,21 +33,62 @@ export const fetchHeroSlider = async () => {
 export const fetchServices = async (): Promise<Service[]> => {
   await delay(500);
   return [
-    { id: '1', title: 'Facebook Marketing', slug: 'facebook-marketing', description: 'Strategic Facebook marketing to grow brand awareness, reach, and sales.', image: 'https://picsum.photos/seed/facebook1/600/400' },
-    { id: '2', title: 'Facebook Marketing Setup & Boosting', slug: 'facebook-setup-boosting', description: 'Complete Facebook ads setup and boosting with proper targeting and budget control.', image: 'https://picsum.photos/seed/facebook2/600/400' },
-    { id: '3', title: 'Facebook Business Page Setup', slug: 'facebook-page-setup', description: 'Professional Facebook business page setup maintaining country standard.', image: 'https://picsum.photos/seed/facebook3/600/400' },
-    { id: '4', title: 'Logo Design', slug: 'logo-design', description: 'Unique and professional logo design to represent your brand identity.', image: 'https://picsum.photos/seed/logo/600/400' },
-    { id: '5', title: 'Regular Post Boost', slug: 'regular-post-boost', description: 'Regular Facebook post boosting to increase reach and engagement.', image: 'https://picsum.photos/seed/postboost/600/400' },
-    { id: '6', title: 'FB Group Share', slug: 'fb-group-share', description: 'Targeted Facebook group sharing for product and service promotion.', image: 'https://picsum.photos/seed/group/600/400' },
-    { id: '7', title: 'Customer Funnel Setup', slug: 'customer-funnel-setup', description: 'Customer funnel setup from awareness to conversion and retargeting.', image: 'https://picsum.photos/seed/funnel/600/400' },
-    { id: '8', title: 'Data Layer Setup', slug: 'data-layer-setup', description: 'Advanced data layer setup for accurate tracking and analytics.', image: 'https://picsum.photos/seed/datalayer/600/400' },
-    { id: '9', title: 'Google Tag Manager Integration', slug: 'gtm-integration', description: 'Google Tag Manager integration for analytics, pixels, and events.', image: 'https://picsum.photos/seed/gtm/600/400' },
-    { id: '10', title: 'Design & Creative', slug: 'design-creative', description: 'Creative design solutions for ads, branding, and marketing campaigns.', image: 'https://picsum.photos/seed/creative/600/400' },
-    { id: '11', title: 'Product Banner Design', slug: 'product-banner-design', description: 'High-quality product banner design for ads and promotions (per design).', image: 'https://picsum.photos/seed/productbanner/600/400' },
-    { id: '12', title: 'Service Banner Design', slug: 'service-banner-design', description: 'Attractive service banner design to promote services (per design).', image: 'https://picsum.photos/seed/servicebanner/600/400' },
-    { id: '13', title: 'Graphics Design', slug: 'graphics-design', description: 'Graphics design for ads, posts, and creatives (per design).', image: 'https://picsum.photos/seed/graphics/600/400' },
-    { id: '14', title: 'Content Creation', slug: 'content-creation', description: 'Monthly product and marketing content creation for business growth.', image: 'https://picsum.photos/seed/content/600/400' },
-    { id: '15', title: 'Facebook Ads Management', slug: 'facebook-ads-management', description: 'Professional Facebook ads management focused on leads and sales.', image: 'https://picsum.photos/seed/facebookads/600/400' },
+    {
+    id: '1',
+    title: 'Facebook Business Page Setup',
+    slug: 'facebook-business-page-setup',
+    description: 'We create a fully optimized and professional Facebook business page that represents your brand identity perfectly. Our team ensures your page is visually appealing, contains complete business information, and is designed to engage your audience effectively. This setup helps you build credibility, increase followers, and attract potential customers organically.',
+    image: 'https://www.socialchamp.com/blog/wp-content/uploads/2021/10/Feature-Banner_JulyOnwards-Q3-2021_1125x600_43.png'
+  },
+  {
+    id: '2',
+    title: 'Facebook Ads Campaign & Boosting',
+    slug: 'facebook-ads-boosting',
+    description: 'Get complete Facebook ads campaign setup with precise targeting, budget allocation, and creative ad design. We monitor campaign performance daily, optimize ads for maximum ROI, and ensure your products or services reach the right audience. Perfect for businesses looking to drive sales, leads, and online engagement effectively.',
+    image: 'https://divbyzero.com/wp-content/uploads/2018/06/facebook-ads-inbound-boost.jpg'
+  },
+  {
+    id: '3',
+    title: 'Social Media Marketing',
+    slug: 'social-media-marketing',
+    description: 'Our social media marketing services help grow your brand presence across Facebook, Instagram, and other platforms. We create content calendars, schedule engaging posts, run promotions, and monitor analytics to increase engagement, reach, and follower growth. Focused on building a loyal community and boosting your online reputation.',
+    image: 'https://media.licdn.com/dms/image/v2/D4D12AQHFymeR2tK9ZA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1655528485759?e=2147483647&v=beta&t=l2NVlgOYYlDHCrqF8JZlHuXTbpQkLHqTdiAoixk5NA0'
+  },
+  {
+    id: '4',
+    title: 'AI Video Make',
+    slug: 'ai-logo-design',
+    description: 'We design unique, professional, and memorable logos using AI-powered tools combined with expert design principles. Each logo reflects your brand values, communicates your identity clearly, and ensures you stand out in your industry. Our service also includes color schemes, branding guidance, and formats ready for print or digital use.',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS28Y8haU2qBHx6mAFwqnQC5RWcQ4Tm-J419Q&s'
+  },
+  {
+    id: '5',
+    title: 'Video Content make with Model',
+    slug: 'content-creation-post-boost',
+    description: 'Engage your audience with high-quality content tailored for your brand. We create compelling Facebook posts, visuals, and copywriting, then boost them strategically to reach the right audience. Our service improves brand awareness, increases engagement, and helps your posts perform better in the Facebook algorithm.',
+    image: 'https://img.freepik.com/free-photo/blonde-influencer-recording-make-up-video_23-2148135468.jpg?semt=ais_user_personalization&w=740&q=80'
+  },
+  {
+    id: '6',
+    title: 'Graphics Design ',
+    slug: 'graphics-design',
+    description: 'Our graphics design service delivers visually stunning creatives for social media, ads, banners, and posts. Each design is crafted to grab attention, communicate your message effectively, and maintain brand consistency. Perfect for businesses seeking professional visual content that drives engagement and sales.',
+    image: 'https://img.freepik.com/premium-vector/modern-web-graphics-pack-vector-eps_1348508-29.jpg?semt=ais_hybrid&w=740&q=80'
+  },
+  {
+    id: '7',
+    title: 'Website Design & Development',
+    slug: 'website-design',
+    description: 'We create modern, responsive, and user-friendly websites tailored to your brand and business goals. Our team focuses on clean design, fast performance, and seamless navigation to ensure a great user experience. Ideal for businesses looking to establish an online presence, showcase products/services, and convert visitors into customers.',
+    image: 'https://img.freepik.com/premium-photo/web-design-team-work-project-concept-yellow-desk-with-web-design-text-top-view-flat-lay_176814-960.jpg?semt=ais_user_personalization&w=740&q=80'
+  },
+  {
+    id: '8',
+    title: 'Facebook Ads Management',
+    slug: 'facebook-ads-management',
+    description: 'Our Facebook ads management service helps you run, monitor, and optimize campaigns effectively. We handle audience targeting, creative design, budget allocation, and analytics tracking to maximize leads and sales. Perfect for businesses that want a hands-free approach to advertising while achieving measurable results.',
+    image: 'https://i.ytimg.com/vi/iCs4XSHAuPM/maxresdefault.jpg'
+  }
   ];
 };
 
@@ -101,14 +142,14 @@ export const fetchTeam = async (): Promise<TeamMember[]> => {
     photo: 'https://picsum.photos/seed/seo-head/400/400',
     details: 'Gont. Tolaram College. Expert in digital marketing strategies.'
   },
-  {
-    id: '3',
-    name: 'Abid Rahman',
-    role: 'Digital Marketer',
-    company: 'Green Soul IT',
-    photo: 'https://picsum.photos/seed/cd/400/400',
-    details: 'Southeast University. 1+ years experience in creative direction marketing.'
-  },
+  // {
+  //   id: '3',
+  //   name: 'Abid Rahman',
+  //   role: 'Digital Marketer',
+  //   company: 'Green Soul IT',
+  //   photo: 'https://picsum.photos/seed/cd/400/400',
+  //   details: 'Southeast University. 1+ years experience in creative direction marketing.'
+  // },
   {
     id: '4',
     name: 'Kaniz Fatema',
@@ -117,14 +158,14 @@ export const fetchTeam = async (): Promise<TeamMember[]> => {
     photo: 'https://picsum.photos/seed/dev1/400/400',
     details: 'BSc in Computer Science from DIU. Specializes in frontend & backend development, React, Node.js.'
   },
-  {
-    id: '5',
-    name: 'MD Al Shahrier Akon',
-    role: 'Graphics Designer',
-    company: 'Green Soul IT',
-    photo: 'https://picsum.photos/seed/dev2/400/400',
-    details: 'BSc in Computer Science from Southeast University. Specializes in frontend & backend development, React, Node.js.'
-  }
+  // {
+  //   id: '5',
+  //   name: 'MD Al Shahrier Akon',
+  //   role: 'Graphics Designer',
+  //   company: 'Green Soul IT',
+  //   photo: 'https://picsum.photos/seed/dev2/400/400',
+  //   details: 'BSc in Computer Science from Southeast University. Specializes in frontend & backend development, React, Node.js.'
+  // }
   ];
 };
 

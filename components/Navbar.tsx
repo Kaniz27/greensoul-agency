@@ -1,3 +1,4 @@
+// src/components/Navbar.tsx
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ChevronDown, Menu, X, User as UserIcon } from "lucide-react";
@@ -18,20 +19,14 @@ const Navbar: React.FC<NavbarProps> = ({ user, onLogout }) => {
 
   // Services list
   const services = [
-    "Facebook Marketing",
-    "Facebook Marketing Setup & Boosting",
-    "Facebook Business Page Setup (Country Standard Maintain)",
-    "Logo Design",
-    "Regular Post Boost",
-    "FB Group Share",
-    "Customer Funnel Setup",
-    "Data Layer Setup",
-    "Google Tag Manager Integration",
-    "Design & Creative",
-    "Product Banner Design (Per Design)",
-    "Service Banner Design (Per Design)",
-    "Graphics Design (Ads, Post, Creative – Per Design)",
-    "Content Creation (Product & Marketing Content – Monthly)"
+    "Facebook Business Page Setup",
+    "Facebook Ads Campaign & Boosting",
+    "Social Media Marketing",
+    "Video Make With Model",
+    "AI Content",
+    "Graphics Design",
+    "Website Design & Development",
+    "Facebook Ads Management"
   ];
 
   // Convert service name to slug
@@ -42,7 +37,7 @@ const Navbar: React.FC<NavbarProps> = ({ user, onLogout }) => {
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
-          
+
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <img
@@ -72,8 +67,8 @@ const Navbar: React.FC<NavbarProps> = ({ user, onLogout }) => {
               {isServicesOpen && (
                 <div
                   className="absolute left-0 mt-2 w-80 bg-white shadow-xl rounded-lg py-2 z-50 max-h-96 overflow-y-auto"
-                  onMouseEnter={() => setIsServicesOpen(true)}  // Keep open
-                  onMouseLeave={() => setIsServicesOpen(false)} // Close when leaving dropdown
+                  onMouseEnter={() => setIsServicesOpen(true)}
+                  onMouseLeave={() => setIsServicesOpen(false)}
                 >
                   {services.map((service) => (
                     <button

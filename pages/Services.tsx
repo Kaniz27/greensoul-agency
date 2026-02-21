@@ -1,3 +1,4 @@
+// src/components/Services.tsx
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { fetchServices } from "../services/api";
@@ -11,24 +12,48 @@ const Services: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
-    fetchServices().then((data) => {
+    const getServices = async () => {
+      const data = await fetchServices();
       setServices(data);
+
       if (slug) {
-        const found = data.find((s) => s.slug === slug);
+        const found = data.find(s => s.slug === slug);
         setActiveService(found || null);
       } else {
         setActiveService(null);
       }
-    });
+    };
+    getServices();
   }, [slug]);
 
-  /* ----------------- Detail Page ----------------- */
-  if (slug && activeService) {
+  // Detail view
+  if (activeService) {
     return (
       <div className="py-24 bg-white animate-in fade-in duration-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap gap-4 mb-6">
+            <Link
+              to="/services"
+              className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600"
+            >
+              All Services
+            </Link>
+            {services.map((service) => (
+              <button
+                key={service.id}
+                className={`px-4 py-2 rounded-full font-medium ${
+                  activeService.id === service.id
+                    ? "bg-green-600 text-white"
+                    : "bg-gray-200 text-gray-700 hover:bg-green-100"
+                }`}
+                onClick={() => setActiveService(service)}
+              >
+                {service.title}
+              </button>
+            ))}
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-            {/* Image Section */}
             <div>
               <img
                 src={activeService.image}
@@ -36,20 +61,17 @@ const Services: React.FC = () => {
                 className="w-full h-auto rounded-3xl shadow-2xl object-cover"
               />
               <div className="grid grid-cols-2 gap-4 mt-8">
-                <img
-                  src={activeService.image}
-                  alt={`${activeService.title} 1`}
-                  className="rounded-2xl shadow-sm object-cover w-full h-48"
-                />
-                <img
-                  src={activeService.image}
-                  alt={`${activeService.title} 2`}
-                  className="rounded-2xl shadow-sm object-cover w-full h-48"
-                />
+                {[1, 2].map((i) => (
+                  <img
+                    key={i}
+                    src={activeService.image}
+                    alt={`${activeService.title} ${i}`}
+                    className="rounded-2xl shadow-sm object-cover w-full h-48"
+                  />
+                ))}
               </div>
             </div>
 
-            {/* Content Section */}
             <div>
               <span className="text-green-500 font-bold uppercase tracking-wider text-sm">
                 Service Details
@@ -82,19 +104,12 @@ const Services: React.FC = () => {
                   Schedule a free strategy call with our specialists today.
                 </p>
                 <Link
-                  to="/contact"
-                  className="bg-green-500 text-white px-8 py-3 rounded-full font-bold hover:bg-green-600 transition-colors inline-block"
+                  to="/services"
+                  className="bg-green-500 text-white px-8 py-3 rounded-full font-bold hover:bg-green-600 transition-colors"
                 >
-                  Contact Us
+                  Back to All Services
                 </Link>
               </div>
-
-              <Link
-                to="/services"
-                className="text-gray-500 hover:text-green-500 flex items-center font-medium"
-              >
-                Back to all services <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
             </div>
           </div>
         </div>
@@ -102,7 +117,7 @@ const Services: React.FC = () => {
     );
   }
 
-  /* ----------------- Services Grid ----------------- */
+  // Grid view
   const displayedServices = showAll ? services : services.slice(0, 6);
 
   return (
@@ -116,11 +131,11 @@ const Services: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {displayedServices.map((service, idx) => (
-            <Link
+          {displayedServices.map((service) => (
+            <div
               key={service.id}
-              to={`/services/${service.slug}`}
-              className="group bg-white p-6 rounded-3xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 flex flex-col"
+              onClick={() => setActiveService(service)}
+              className="cursor-pointer group bg-white p-6 rounded-3xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 flex flex-col"
             >
               <img
                 src={service.image}
@@ -132,11 +147,10 @@ const Services: React.FC = () => {
               <span className="inline-flex items-center text-green-500 font-bold mt-auto">
                 Learn Details <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-2 transition-transform" />
               </span>
-            </Link>
+            </div>
           ))}
         </div>
 
-        {/* Show More Button */}
         {!showAll && services.length > 6 && (
           <div className="text-center mt-10">
             <button
