@@ -7,18 +7,7 @@ import { fetchServices, fetchCaseStudies, fetchTestimonials } from '../services/
 import { Service, CaseStudy, Testimonial } from '../types';
 
 import ImageCollection from './ImageCollection';
-
-
-
-
-
-
-
-
-
-
-
-
+import VideoSection from '@/components/VideoSection';
 
 const Home: React.FC = () => {
   const [services, setServices] = useState<Service[]>([]);
@@ -43,6 +32,8 @@ const Home: React.FC = () => {
   return (
     <div className="flex flex-col w-full">
       <HeroSlider />
+
+      <VideoSection></VideoSection>
 
       {/* Services Overview */}
       <section className="py-24 bg-white">

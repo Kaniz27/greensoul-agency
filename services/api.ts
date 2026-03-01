@@ -16,7 +16,7 @@ export const fetchHeroSlider = async () => {
     },
     {
       id: 2,
-      image: 'https://cdn.pixabay.com/photo/2020/12/09/03/10/digital-marketing-5816304_1280.jpg',
+      image: 'https://png.pngtree.com/thumb_back/fw800/background/20250527/pngtree-digital-marketing-concept-image_17347611.jpg',
       title: 'Creative Digital Strategies',
       subtitle: 'Tailored Marketing Campaigns',
     },
