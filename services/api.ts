@@ -10,19 +10,19 @@ export const fetchHeroSlider = async () => {
   return [
     {
       id: 1,
-      image: 'https://picsum.photos/id/20/1920/1080',
+      image: 'https://media.istockphoto.com/id/1443560890/photo/digital-marketing-business-technology-concept-website-advertisement-email-social-media.jpg?s=612x612&w=0&k=20&c=S7d_Mof_fEsM69inW540APogoXkz-eA23XE1AIhTaBA=',
       title: 'Boost Your Online Presence',
       subtitle: 'SEO, PPC, Social Media Marketing',
     },
     {
       id: 2,
-      image: 'https://picsum.photos/id/1/1920/1080',
+      image: 'https://cdn.pixabay.com/photo/2020/12/09/03/10/digital-marketing-5816304_1280.jpg',
       title: 'Creative Digital Strategies',
       subtitle: 'Tailored Marketing Campaigns',
     },
     {
       id: 3,
-      image: 'https://picsum.photos/id/2/1920/1080',
+      image: 'https://cdn.pixabay.com/photo/2019/04/07/23/11/digital-marketing-4111002_1280.jpg',
       title: 'Analytics & Growth',
       subtitle: 'Measurable Results for Your Business',
     },
