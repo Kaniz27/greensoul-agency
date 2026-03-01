@@ -139,7 +139,7 @@ export const fetchTeam = async (): Promise<TeamMember[]> => {
     name: 'Aminul Islam Shuvo',
     role: 'Marketing Head',
     company: 'Green Soul IT',
-    photo: 'https://picsum.photos/seed/seo-head/400/400',
+    photo: 'https://i.postimg.cc/QdY0Y5cB/shuvo-vai.jpg',
     details: 'Gont. Tolaram College. Expert in digital marketing strategies.'
   },
   // {
@@ -155,7 +155,7 @@ export const fetchTeam = async (): Promise<TeamMember[]> => {
     name: 'Kaniz Fatema',
     role: 'Web Developer',
     company: 'Green Soul IT',
-    photo: 'https://picsum.photos/seed/dev1/400/400',
+    photo: 'https://i.postimg.cc/7LQdzdKd/Kaniz.jpg',
     details: 'BSc in Computer Science from DIU. Specializes in frontend & backend development, React, Node.js.'
   },
   // {

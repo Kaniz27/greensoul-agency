@@ -61,60 +61,98 @@ const About: React.FC = () => {
       </section>
 
       {/* Team Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-green-500 font-bold tracking-widest uppercase text-sm mb-3">The People</h2>
-            <h3 className="text-4xl font-bold text-gray-900">Meet Our Expert Team</h3>
-          </div>
+ <section className="py-24 bg-gradient-to-br from-white via-green-50 to-emerald-50 relative overflow-hidden">
 
-          {/* Grid Layout: 3 on top row, 2 on bottom */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {team.slice(0, 3).map(member => (
-              <div 
-                key={member.id} 
-                className="bg-white p-4 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
-                onClick={() => setSelectedMember(member)}
-              >
-                <div className="overflow-hidden rounded-2xl mb-4">
-                  <img 
-                    src={member.photo} 
-                    alt={member.name} 
-                    className="w-full h-64 object-cover rounded-2xl"
-                  />
-                </div>
-                <div className="text-center">
-                  <h4 className="text-xl font-bold text-gray-900">{member.name}</h4>
-                  <p className="text-green-600 font-medium">{member.role}</p>
-                  <p className="text-gray-500 text-sm mt-1">{member.company}</p>
-                </div>
-              </div>
-            ))}
+  {/* Soft Background Glow */}
+  <div className="absolute -top-32 -left-32 w-96 h-96 bg-green-200/40 rounded-full blur-3xl"></div>
+  <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-emerald-200/40 rounded-full blur-3xl"></div>
 
-            {team.slice(3, 5).map(member => (
-              <div 
-                key={member.id} 
-                className="bg-white p-4 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer"
-                onClick={() => setSelectedMember(member)}
-              >
-                <div className="overflow-hidden rounded-2xl mb-4">
-                  <img 
-                    src={member.photo} 
-                    alt={member.name} 
-                    className="w-full h-64 object-cover rounded-2xl"
-                  />
-                </div>
-                <div className="text-center">
-                  <h4 className="text-xl font-bold text-gray-900">{member.name}</h4>
-                  <p className="text-green-600 font-medium">{member.role}</p>
-                  <p className="text-gray-500 text-sm mt-1">{member.company}</p>
-                </div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+
+    {/* Header */}
+    <div className="text-center mb-16">
+      <h2 className="text-green-600 font-bold tracking-widest uppercase text-sm mb-3">
+        The People
+      </h2>
+      <h3 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+        Meet Our Expert Team
+      </h3>
+      <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+        A dedicated team of creatives, strategists, and marketers focused on
+        growing your brand with measurable results.
+      </p>
+    </div>
+
+    {/* Grid */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+      {team.slice(0, 5).map((member) => (
+        <div
+          key={member.id}
+          onClick={() => setSelectedMember(member)}
+          className="group cursor-pointer transition duration-500 hover:-translate-y-2"
+        >
+
+          {/* Light Glass Card */}
+          <div className="backdrop-blur-lg bg-white/60 border border-white/70 
+                          rounded-3xl shadow-md hover:shadow-2xl 
+                          transition duration-500 overflow-hidden">
+
+            {/* Image */}
+            <div className="relative bg-white/40 flex items-center justify-center p-6">
+              <img
+                src={member.photo}
+                alt={member.name}
+                className="max-h-80 w-auto object-contain transition duration-500 group-hover:scale-105"
+              />
+
+              {/* Role badge */}
+              <div className="absolute top-4 left-4 backdrop-blur-md bg-green-500/90 
+                              text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+                {member.role}
               </div>
-            ))}
+            </div>
+
+            {/* Content */}
+            <div className="text-center px-6 py-6">
+              <h4 className="text-xl font-bold text-gray-900">
+                {member.name}
+              </h4>
+
+              <p className="text-gray-500 text-sm mt-1">
+                {member.company}
+              </p>
+
+              {/* Fancy Divider */}
+              <div className="w-16 h-[3px] bg-gradient-to-r from-green-500 to-emerald-400 
+                              mx-auto mt-4 rounded-full opacity-80"></div>
+
+              <p className="mt-4 text-sm text-gray-600 opacity-80 group-hover:opacity-100 transition">
+                View Profile →
+              </p>
+            </div>
+
           </div>
         </div>
-      </section>
+      ))}
 
+    </div>
+
+    {/* Bottom CTA */}
+    <div className="text-center mt-20">
+      <p className="text-gray-600 text-lg">
+        Want to work with us?
+      </p>
+
+      <button className="mt-6 px-8 py-3 bg-gradient-to-r from-green-500 to-emerald-500 
+                         text-white font-semibold rounded-full shadow-lg 
+                         hover:shadow-xl hover:scale-105 transition duration-300">
+        Join Our Team
+      </button>
+    </div>
+
+  </div>
+</section>
       {/* Modal for Member Details */}
       {selectedMember && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
