@@ -1,7 +1,12 @@
 // src/components/Navbar.tsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ChevronDown, Menu, X, User as UserIcon } from "lucide-react";
+
+// ✅ fetchServices import path ঠিক করো:
+import { fetchServices } from "../services/api"; 
+// উদাহরণ: যদি file থাকে src/services/serviceApi.ts তাহলে:
+// import { fetchServices } from "../services/serviceApi";
 
 interface User {
   name: string;
@@ -12,32 +17,44 @@ interface NavbarProps {
   onLogout: () => void;
 }
 
+type Service = {
+  id: string;
+  title: string;
+  slug: string;
+};
+
 const Navbar: React.FC<NavbarProps> = ({ user, onLogout }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const navigate = useNavigate();
 
-  // Services list
-  const services = [
-    "Facebook Business Page Setup",
-    "Facebook Ads Campaign & Boosting",
-    "Social Media Marketing",
-    "Video Make With Model",
-    "AI Content",
-    "Graphics Design",
-    "Website Design & Development",
-    "Facebook Ads Management"
-  ];
+  // ✅ Services এখন API থেকে আসবে (slug mismatch হবে না)
+  const [services, setServices] = useState<Service[]>([]);
 
-  // Convert service name to slug
-  const getSlug = (service: string) =>
-    service.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "");
+  useEffect(() => {
+    const loadServices = async () => {
+      try {
+        const data = await fetchServices();
+        // শুধু title + slug লাগবে navbar এ
+        const mapped = data.map((s: any) => ({
+          id: s.id,
+          title: s.title,
+          slug: s.slug,
+        }));
+        setServices(mapped);
+      } catch (e) {
+        // fallback: empty থাকলেও navbar ভাঙবে না
+        setServices([]);
+      }
+    };
+
+    loadServices();
+  }, []);
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
-
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <img
@@ -70,21 +87,28 @@ const Navbar: React.FC<NavbarProps> = ({ user, onLogout }) => {
                   onMouseEnter={() => setIsServicesOpen(true)}
                   onMouseLeave={() => setIsServicesOpen(false)}
                 >
-                  {services.map((service) => (
-                    <button
-                      key={service}
-                      onClick={() => navigate(`/services/${getSlug(service)}`)}
-                      className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600"
-                    >
-                      {service}
-                    </button>
-                  ))}
+                  {services.length === 0 ? (
+                    <div className="px-4 py-2 text-sm text-gray-500">
+                      No services found
+                    </div>
+                  ) : (
+                    services.map((service) => (
+                      <button
+                        key={service.id}
+                        // ✅ slug সরাসরি ডাটা থেকে নাও
+                        onClick={() => navigate(`/services/${service.slug}`)}
+                        className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600"
+                      >
+                        {service.title}
+                      </button>
+                    ))
+                  )}
                 </div>
               )}
             </div>
 
             <Link to="/case-studies" className="nav-link">Case Studies</Link>
-            <Link to="/invoice" className="nav-link">Payment </Link>
+            <Link to="/invoice" className="nav-link">Payment</Link>
             <Link to="/contact" className="nav-link">Contact</Link>
 
             {/* Auth */}
@@ -137,18 +161,23 @@ const Navbar: React.FC<NavbarProps> = ({ user, onLogout }) => {
           {/* Mobile Services Dropdown */}
           <div className="border-t pt-2">
             <p className="text-gray-600 font-semibold mb-2">Services</p>
-            {services.map(service => (
-              <button
-                key={service}
-                onClick={() => {
-                  navigate(`/services/${getSlug(service)}`);
-                  setIsOpen(false);
-                }}
-                className="w-full text-left px-2 py-1 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 rounded"
-              >
-                {service}
-              </button>
-            ))}
+
+            {services.length === 0 ? (
+              <p className="text-sm text-gray-500 px-2">No services found</p>
+            ) : (
+              services.map((service) => (
+                <button
+                  key={service.id}
+                  onClick={() => {
+                    navigate(`/services/${service.slug}`);
+                    setIsOpen(false);
+                  }}
+                  className="w-full text-left px-2 py-1 text-sm text-gray-700 hover:bg-green-50 hover:text-green-600 rounded"
+                >
+                  {service.title}
+                </button>
+              ))
+            )}
           </div>
         </div>
       )}

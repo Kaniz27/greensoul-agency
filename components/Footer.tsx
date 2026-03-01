@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Twitter, Instagram, Linkedin, Send } from "lucide-react";
+import { fetchServices } from "../services/api"; // ⚠️ path ঠিক করো
+
+type Service = {
+  id: string;
+  title: string;
+  slug: string;
+};
 
 const Footer: React.FC = () => {
+  const [services, setServices] = useState<Service[]>([]);
+
+  useEffect(() => {
+    const loadServices = async () => {
+      try {
+        const data = await fetchServices();
+        setServices(data.slice(0, 5)); // ✅ শুধু ৫টা দেখাবে
+      } catch (error) {
+        console.error("Failed to load services");
+      }
+    };
+
+    loadServices();
+  }, []);
+
   return (
     <footer className="bg-gray-900 text-white pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,22 +60,27 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li><Link to="/" className="footer-link">Home</Link></li>
               <li><Link to="/about" className="footer-link">About Us</Link></li>
-              <li><Link to="/services" className="footer-link">Our Services</Link></li>
+              <li><Link to="/services" className="footer-link">All Services</Link></li>
               <li><Link to="/case-studies" className="footer-link">Case Studies</Link></li>
               <li><Link to="/blog" className="footer-link">Blog</Link></li>
               <li><Link to="/contact" className="footer-link">Contact</Link></li>
             </ul>
           </div>
 
-          {/* SERVICES */}
+          {/* SERVICES (Dynamic 5 items) */}
           <div>
             <h4 className="text-lg font-bold mb-8">Services</h4>
             <ul className="space-y-4">
-              <li><Link to="/services/seo" className="footer-link">SEO Optimization</Link></li>
-              <li><Link to="/services/social-media" className="footer-link">Social Media Marketing</Link></li>
-              <li><Link to="/services/ppc" className="footer-link">PPC Campaigns</Link></li>
-              <li><Link to="/services/web-dev" className="footer-link">Web Development</Link></li>
-              <li><Link to="/services/design" className="footer-link">Graphic Design</Link></li>
+              {services.map((service) => (
+                <li key={service.id}>
+                  <Link
+                    to={`/services/${service.slug}`}
+                    className="footer-link"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

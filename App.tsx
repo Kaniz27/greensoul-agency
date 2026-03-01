@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Breadcrumbs from './components/Breadcrumbs';
@@ -12,7 +12,9 @@ import BlogPage from './pages/Blog';
 import Contact from './pages/Contact';
 import Auth from './pages/Auth';
 import { User } from './types';
+
 import Invoice from './pages/Invoice';
+import ServiceDetails from './pages/ServiceDetails';
 
 
 // ScrollToTop component to reset scroll position on route change
@@ -61,6 +63,7 @@ const App: React.FC = () => {
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/auth" element={<Auth onLoginSuccess={handleLoginSuccess} />} />
+             <Route path="/services/:slug" element={<ServiceDetails/>} />
           </Routes>
         </main>
 
