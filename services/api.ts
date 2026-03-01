@@ -10,7 +10,7 @@ export const fetchHeroSlider = async () => {
   return [
     {
       id: 1,
-      image: 'https://media.istockphoto.com/id/1443560890/photo/digital-marketing-business-technology-concept-website-advertisement-email-social-media.jpg?s=612x612&w=0&k=20&c=S7d_Mof_fEsM69inW540APogoXkz-eA23XE1AIhTaBA=',
+      image: 'https://png.pngtree.com/thumb_back/fh260/background/20230712/pngtree-innovative-3d-renderings-for-web-development-promotions-marketing-collateral-business-presentations-image_3856387.jpg',
       title: 'Boost Your Online Presence',
       subtitle: 'SEO, PPC, Social Media Marketing',
     },

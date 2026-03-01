@@ -50,7 +50,7 @@ const About: React.FC = () => {
           </div>
           <div className="relative animate-in fade-in slide-in-from-right-8 duration-700">
             <img 
-              src="https://picsum.photos/id/42/800/600" 
+              src="https://curiositygym.com/wp-content/uploads/2022/05/DM1.jpg" 
               alt="Office collab" 
               className="rounded-3xl shadow-2xl relative z-10"
             />
