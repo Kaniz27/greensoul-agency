@@ -20,7 +20,7 @@ const VideoSection: React.FC = () => {
                 muted
                 loop
               >
-                <source src="/components/image/greebsoul.mp4" type="video/mp4" />
+                <source src="https://res.cloudinary.com/dqvdj8rq6/video/upload/v1772610416/greebsoul_bvctkm.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
