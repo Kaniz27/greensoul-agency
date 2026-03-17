@@ -142,22 +142,22 @@ export const fetchTeam = async (): Promise<TeamMember[]> => {
     photo: 'https://i.postimg.cc/QdY0Y5cB/shuvo-vai.jpg',
     details: 'Gont. Tolaram College. Expert in digital marketing strategies.'
   },
-  // {
-  //   id: '3',
-  //   name: 'Abid Rahman',
-  //   role: 'Digital Marketer',
-  //   company: 'Green Soul IT',
-  //   photo: 'https://picsum.photos/seed/cd/400/400',
-  //   details: 'Southeast University. 1+ years experience in creative direction marketing.'
-  // },
   {
-    id: '4',
-    name: 'Kaniz Fatema',
-    role: 'Web Developer',
+    id: '3',
+    name: 'Abida Rahman',
+    role: 'Digital Marketer',
     company: 'Green Soul IT',
-    photo: 'https://i.postimg.cc/7LQdzdKd/Kaniz.jpg',
-    details: 'BSc in Computer Science from DIU. Specializes in frontend & backend development, React, Node.js.'
+    photo: 'https://picsum.photos/seed/cd/400/400',
+    details: 'Southeast University. 1+ years experience in creative direction marketing.'
   },
+  // {
+  //   id: '4',
+  //   name: 'Kaniz Fatema',
+  //   role: 'Web Developer',
+  //   company: 'Green Soul IT',
+  //   photo: 'https://i.postimg.cc/7LQdzdKd/Kaniz.jpg',
+  //   details: 'BSc in Computer Science from DIU. Specializes in frontend & backend development, React, Node.js.'
+  // },
   // {
   //   id: '5',
   //   name: 'MD Al Shahrier Akon',
